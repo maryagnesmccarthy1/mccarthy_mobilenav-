@@ -1,2 +1,2 @@
 # mccarthy_mobilenav-
-Mary McCarthy mobile nave
+Mary McCarthy Mobile Navigation: Right-Side Drawer project.  
