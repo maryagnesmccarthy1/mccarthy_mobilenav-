@@ -1,0 +1,60 @@
+/* Desktop styles (default) */
+.site-header { /* sticky bar across the top */ }
+.header-inner {
+  display: flex;
+  justify-content: space-between;   /* brand left, nav right */
+  align-items: center;
+}
+.menu-toggle { display: none; }      /* hidden on desktop */
+.primary-nav .navlinks {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+/*ChatGPT help with changing color of button so that it stands out more than the original white*/
+/* Mobile drawer */
+@media (max-width: 767px){
+  .menu-toggle {
+    display: inline-flex;
+    background-color: blue;
+  }
+
+  .primary-nav {
+    position: fixed;
+    top: 0;
+    right: 0;        /* RIGHT side */
+    bottom: 0;
+    width: 300px;
+    max-width: 85vw;
+
+  /*ChatGPT help with drawer not appearing added background color to pink to see drawer*/
+  background-color: rgb(205, 78, 177);
+
+  /*ChatGPT help with drawer*/
+z-index: 1001;
+
+    transform: translateX(100%);     /* off-screen */
+    transition: transform 0.28s ease;
+  }
+
+   /*ChatGPT help with drawer disappering*/
+  .primary-nav .navlinks {
+  flex-direction: column;
+  }
+
+
+  body.menu-open .primary-nav {
+    transform: translateX(0);        /* slide in */
+  }
+  
+  /*color change added when clicking button*/
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(53, 110, 225, 0.5);
+    /*ChatGPT help with drawer added to nav rule from 1001 to 1000 so it is less than the size of the z-index*/
+    z-index: 1000;
+  }
+  body.menu-open { overflow: hidden; }
+}
+
